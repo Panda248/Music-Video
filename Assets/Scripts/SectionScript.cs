@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class Section3Script : SectionScript
+public class SectionScript : MonoBehaviour
 {
+    public Material skybox;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

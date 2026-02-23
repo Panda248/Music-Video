@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Section2Script : MonoBehaviour
+public class Section2Script : SectionScript
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
