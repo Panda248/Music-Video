@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47c4c3a7f3b64a43b4eab615910fb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PositionListener
-  samples: 2
+  samples: 8
   spectrumScript: {fileID: 0}
   freqMin: 0
   freqMax: 44000
