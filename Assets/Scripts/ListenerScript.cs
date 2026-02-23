@@ -12,6 +12,7 @@ public class ListenerScript : MonoBehaviour
         Presence,
         Brilliance,
         WhoCanHearThis,
+        All,
         Custom
     };
 
@@ -76,6 +77,10 @@ public class ListenerScript : MonoBehaviour
                 freqMinAdjusted = 20000;
                 freqMaxAdjusted = 44000;
                 break;
+            case Samples.All: 
+                freqMinAdjusted = 0;
+                freqMaxAdjusted = 44000;
+                break;
             //case Samples.: // if you want to add more presets
             //    freqMinAdjusted = 150;
             //    freqMaxAdjusted = 4000;
@@ -89,6 +94,8 @@ public class ListenerScript : MonoBehaviour
         freqMinAdjusted /= 44000 / spectrumScript.binCount;
         freqMaxAdjusted /= 44000 / spectrumScript.binCount;
 
+        freqMaxAdjusted = Mathf.Clamp(freqMaxAdjusted, 0, spectrumScript.binCount - 1);
+        freqMinAdjusted = Mathf.Clamp(freqMinAdjusted, 0, spectrumScript.binCount - 1);
         Debug.Log($"{gameObject.name} minBucket = {freqMinAdjusted} max = {freqMaxAdjusted}");
 
         freqCount = freqMaxAdjusted - freqMinAdjusted + 1;
