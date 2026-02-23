@@ -3,12 +3,14 @@ using UnityEngine;
 public class ScaleListener : MonoBehaviour
 {
     public enum Samples{
-        Drums,
-        Synths,
-        Trumpet,
-        ImNotACrook,
-        Chorus,
-        Vocals,
+        SubBase,
+        Bass,
+        LowMid,
+        Mid,
+        UpperMid,
+        Presence,
+        Brilliance,
+        WhoCanHearThis,
         Custom
     };
 
@@ -17,11 +19,11 @@ public class ScaleListener : MonoBehaviour
     public Samples samples = Samples.Custom;
     public AudioSpectrum spectrumScript;
     
-    [Range(0f, 11f)]
-    public float freqMin;
+    [Range(0f, 44000)]
+    public int freqMin;
 
-    [Range(0f, 11f)]
-    public float freqMax;
+    [Range(0f, 44000)]
+    public int freqMax;
     public float floor = 1f;
 
     [Range(0f, 50f)]
@@ -41,29 +43,45 @@ public class ScaleListener : MonoBehaviour
 
         switch(samples)
         {
-            case Samples.Drums:
+            case Samples.SubBase:
                 freqMinAdjusted = 0;
-                freqMaxAdjusted = 150;
+                freqMaxAdjusted = 60;
                 break;
-            case Samples.Synths:
-                freqMinAdjusted = 100;
-                freqMaxAdjusted = 1000;
+            case Samples.Bass:
+                freqMinAdjusted = 60;
+                freqMaxAdjusted = 250;
                 break;
-            case Samples.ImNotACrook:
-                freqMinAdjusted = 400;
-                freqMaxAdjusted = 5000;
+            case Samples.LowMid:
+                freqMinAdjusted = 250;
+                freqMaxAdjusted = 500;
                 break;
-            case Samples.Chorus:
-                freqMinAdjusted = 400;
-                freqMaxAdjusted = 10000;
+            case Samples.Mid:
+                freqMinAdjusted = 500;
+                freqMaxAdjusted = 2000;
                 break;
-            case Samples.Vocals:
-                freqMinAdjusted = 150;
+            case Samples.UpperMid:
+                freqMinAdjusted = 2000;
                 freqMaxAdjusted = 4000;
                 break;
+            case Samples.Presence:
+                freqMinAdjusted = 4000;
+                freqMaxAdjusted = 6000;
+                break;
+            case Samples.Brilliance:
+                freqMinAdjusted = 6000;
+                freqMaxAdjusted = 20000;
+                break;
+            case Samples.WhoCanHearThis:
+                freqMinAdjusted = 20000;
+                freqMaxAdjusted = 44000;
+                break;
+            //case Samples.: // if you want to add more presets
+            //    freqMinAdjusted = 150;
+            //    freqMaxAdjusted = 4000;
+            //    break;
             default:
-                freqMinAdjusted = (int)Mathf.Floor(Mathf.Pow(freqMin, (float)Math.E));
-                freqMaxAdjusted = (int)Mathf.Floor(Mathf.Pow(freqMax, (float)Math.E));
+                freqMinAdjusted = freqMin;
+                freqMaxAdjusted = freqMax;
                 break;
         }
 

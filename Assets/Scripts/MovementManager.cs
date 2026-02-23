@@ -8,40 +8,54 @@ public class MovementManager : MonoBehaviour
 {
 
     [Serializable] class Movement { public float start; public GameObject movementObject; }
-    AudioSource audio;
-    float time;
+    AudioSource audiosource;
 
     [SerializeField] List<Movement> movements;
-    int currentMovement;
+    [SerializeField] Movement currentMovement;
+    int nextMovement;
+    float time;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        time = 0;
+        audiosource = GetComponent<AudioSource>();
         if(movements == null)
         {
             movements = new List<Movement>();
         }
-        currentMovement = 0;
+        nextMovement = 0;
+        currentMovement.movementObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        time = audio.time;
+        time = audiosource.time;
+        if (nextMovement < movements.Count)
+        {
+            if(time > movements[nextMovement].start)
+            {
+                currentMovement.movementObject.SetActive(false);
+
+                currentMovement = movements[nextMovement];
+                currentMovement.movementObject.SetActive(false);
+                nextMovement++;
+            }
+        }
         
     }
 
     float remainingMovementDuration()
     {
-        if(currentMovement == movements.Count)
+        if(nextMovement == movements.Count)
         {
             return -1;
         }
-        return time - movements[currentMovement + 1].start;
+        return time - movements[nextMovement].start;
     }
 
     float currentMovementDuration()
     {
-        return movements[currentMovement + 1].start - movements[currentMovement].start;
+        return movements[nextMovement].start - ((nextMovement == 0) ? 0 : movements[nextMovement - 1].start);
     }
 }
