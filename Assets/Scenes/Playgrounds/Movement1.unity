@@ -2285,37 +2285,6 @@ MonoBehaviour:
   xFreq: 1
   yFreq: 1
   zFreq: 1
---- !u!1 &683681600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 683681601}
-  m_Layer: 0
-  m_Name: LIghts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &683681601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683681600}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.72478, y: 7.51504, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702302342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6721,7 +6690,6 @@ SceneRoots:
   - {fileID: 6237173007438906344}
   - {fileID: 543450652400854330}
   - {fileID: 464405616}
-  - {fileID: 683681601}
   - {fileID: 625222109}
   - {fileID: 1454772665}
   - {fileID: 106634327}
