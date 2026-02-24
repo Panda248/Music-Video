@@ -1,2 +1,4 @@
 # Music-Video
-IMDM290 Assignment
+IMDM290 Time and Frequency Assignment
+
+[Demo](https://youtu.be/bnvLziBd-w0)
