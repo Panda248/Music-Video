@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Section4Script
   skyboxMaterial: {fileID: 2100000, guid: 31dbc0536c5f6984bb2ace80306c324c, type: 2}
-  writeLight: 0
-  writeGirl: 0
-  lightColor: {r: 0, g: 0, b: 0, a: 0}
-  girlColor: {r: 0, g: 0, b: 0, a: 0}
+  writeLight: 1
+  writeGirl: 1
+  lightColor: {r: 0.03137255, g: 0, b: 1, a: 0}
+  girlColor: {r: 1, g: 0.7294118, b: 0.7294118, a: 0}
+  lightIntensity: 0.5
+  girlIntensity: 1
