@@ -6,9 +6,7 @@ public class SectionScript : MonoBehaviour
     public bool writeLight = false, writeGirl = false;
     public Color lightColor, girlColor;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         Skybox skybox = FindAnyObjectByType<Skybox>();
         skybox.material = skyboxMaterial;
