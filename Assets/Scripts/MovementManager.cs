@@ -18,7 +18,7 @@ public class MovementManager : MonoBehaviour
     void Start()
     {
         time = 0;
-        audiosource = GetComponent<AudioSource>();
+        audiosource = AudioSpectrum.getAudio();
         if(movements == null)
         {
             movements = new List<Movement>();
@@ -31,14 +31,16 @@ public class MovementManager : MonoBehaviour
     void Update()
     {
         time = audiosource.time;
+        Debug.Log(time);
         if (nextMovement < movements.Count)
         {
             if(time > movements[nextMovement].start)
             {
+                Debug.Log($"Moving from {currentMovement.ToString()} to {movements[nextMovement].ToString()}");
                 currentMovement.movementObject.SetActive(false);
 
                 currentMovement = movements[nextMovement];
-                currentMovement.movementObject.SetActive(false);
+                currentMovement.movementObject.SetActive(true);
                 nextMovement++;
             }
         }

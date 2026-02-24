@@ -28,7 +28,7 @@ public class ListenerScript : MonoBehaviour
     public int freqMax;
     public float floor = 1f;
 
-    [Range(0f, 50f)]
+    [Range(0f, 200f)]
     public float sensitivity = 1.0f;
 
     protected int freqCount;

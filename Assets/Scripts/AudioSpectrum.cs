@@ -24,6 +24,7 @@ public class AudioSpectrum : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         spectrum = new float[binCount];
+        source.Play();
     }
 
     // Update is called once per frame
