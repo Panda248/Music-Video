@@ -10,6 +10,8 @@ public class SectionScript : MonoBehaviour
     public virtual void OnEnable()
     {
         Skybox skybox = FindAnyObjectByType<Skybox>();
+        Camera camm = FindAnyObjectByType<Camera>();
+        camm.clearFlags = CameraClearFlags.Skybox;
         skybox.material = skyboxMaterial;
         Light light = GameObject.FindWithTag("MainLight").GetComponent<Light>();
         Light girl = GameObject.FindWithTag("GirlLight").GetComponent<Light>();
